@@ -4,7 +4,7 @@ from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, No
 
 # Configurable paths
 TRANSCRIPT_FOLDER = 'datasets_transcripts_dbms'
-SKIPPED_FILE = os.path.join('datasets', 'skipped.txt')  # <-- Updated
+SKIPPED_FILE = os.path.join('datasets', 'skipped_dbms.txt')  # <-- Updated
 EXCEL_FILE = 'datasets/DBMS.xlsx'  # Change if needed
 
 # Ensure directories exist
