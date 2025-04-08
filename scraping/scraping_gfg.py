@@ -58,5 +58,5 @@ def extract_gfg_article(url, output_dir="dataset_gfg_dbms"):
         print(f" Error: {e}")
 
 # Example usage
-url = "https://www.geeksforgeeks.org/structural-constraints-of-relationships-in-er-model/?ref=lbp"
+url = "https://www.geeksforgeeks.org/sql-limit-clause/?ref=lbp"
 extract_gfg_article(url)
