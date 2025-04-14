@@ -58,5 +58,5 @@ def extract_gfg_article(url, output_dir="dataset_gfg_dbms"):
         print(f" Error: {e}")
 
 # Example usage
-url = "https://www.geeksforgeeks.org/denormalization-in-databases/?ref=lbp"
+url = "https://www.geeksforgeeks.org/commonly-asked-dbms-interview-questions-set-2/?ref=lbp"
 extract_gfg_article(url)
