@@ -3,6 +3,7 @@ armstrongs-axioms-in-functional-dependency-in-dbms.txt
 basic-operators-in-relational-algebra-2.txt
 boyce-codd-normal-form-bcnf.txt
 canonical-cover-of-functional-dependencies-in-dbms.txt
+commonly-asked-dbms-interview-questions-set-2.txt
 commonly-asked-dbms-interview-questions.txt
 data-base-dependency-preserving-decomposition.txt
 denormalization-in-databases.txt
@@ -43,4 +44,3 @@ structural-constraints-of-relationships-in-er-model.txt
 the-problem-of-redundancy-in-database.txt
 types-of-keys-in-relational-model-candidate-super-primary-alternate-and-foreign.txt
 _utm_source_geeksforgeeks_utm_medium_gfgcontent_shm_utm_campaign_shm.txt
-commonly-asked-dbms-interview-questions-set-2.txt
