@@ -14,7 +14,7 @@ nltk.download('stopwords')
 nltk.download('averaged_perceptron_tagger')
 
 # Load knowledge base
-with open(r'C:\AI-Mentor\kb.json', 'r', encoding='utf-8') as f:
+with open('./kb.json', 'r', encoding='utf-8') as f:
     kb = json.load(f)
 
 # Load sentence embedding model
@@ -54,6 +54,8 @@ if "state" not in st.session_state:
     st.session_state.interest_keywords = []
     st.session_state.user_answer = None
     st.session_state.show_result = False
+    st.session_state.total_score = 0.0
+    st.session_state.questions_answered = 0
 
 # Introduction screen
 if st.session_state.state == "intro":
@@ -93,6 +95,11 @@ elif st.session_state.state == "chat":
 
             st.session_state.similarity_score = score
             st.session_state.show_result = True
+
+            # Accumulate total score and count
+            st.session_state.total_score += score
+            st.session_state.questions_answered += 1
+
             st.rerun()
 
     else:
@@ -129,7 +136,26 @@ elif st.session_state.state == "chat":
 # End screen
 elif st.session_state.state == "end":
     st.balloons()
-    st.success("✅ You've completed the session. Great job!")
+    # Calculate final score display
+    total = st.session_state.total_score
+    count = st.session_state.questions_answered
+    max_score = count * 1.0  # max similarity per question is 1.0
+    score_display = f"{total:.2f} / {max_score:.2f}"
+
+    st.success(f"✅ You've completed the session. Your total score is: {score_display}")
+
+    # Provide feedback based on score percentage
+    if count == 0:
+        st.info("No questions were answered.")
+    else:
+        percentage = total / max_score
+        if percentage >= 0.7:
+            st.success("You are doing good! Keep it up!")
+        elif percentage >= 0.4:
+            st.warning("Decent effort! Some improvement needed.")
+        else:
+            st.error("You need improvement. Keep practicing!")
+
     if st.button("🔁 Restart"):
         for key in list(st.session_state.keys()):
             del st.session_state[key]
